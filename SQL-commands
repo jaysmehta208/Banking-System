@@ -1,0 +1,15 @@
+ 
+create table accounts (user_id integer primary key, uname varchar(20), balance integer, address varchar(100), 
+email_address varchar(50), phone_no integer,password varchar(100));
+create table transacts (sno integer primary key, user_id integer, date date, type varchar(10), amt integer, balance integer, FOREIGN KEY (user_id) REFERENCES accounts(user_id) ON DELETE CASCADE)
+create table loans
+(loan_number integer primary key,
+user_id integer,
+original_principle_borrowed integer,
+interest_rate decimal(4,2),
+date_borrowed date,
+date_last_active date default NULL);
+
+
+
+
